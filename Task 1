@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+
+{
+    int attempts;
+    int user_guess;
+    
+    srand(time(0));
+    int random_number = rand() %10 + 1;
+    cout<< "Choose a random number between 1 to 10.Guess the number. You have five attempts."<<endl;
+    for(attempts=0; attempts<5; attempts++)
+    {
+        cin>>user_guess;
+        if(user_guess>random_number)
+        {
+            cout<<"Too HIGH!"<<endl;
+        }
+        else if(user_guess<random_number)
+        {
+            cout<<"Too LOW!"<<endl;
+        }
+        else
+        {
+            cout<<"Correct number is guessed!";
+            exit(0);
+        }
+    }
+    cout<<"The correct number is :"<<random_number<<endl;
+    
+    return 0;
+}
