@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char operation;
+    double number1, number2;
+
+    cout << "Calculator Operating" << endl;
+   
+    cout << "Enter the 1st number: ";
+    cin >> number1;
+    cout << "Enter the 2nd number: ";
+    cin >> number2;
+   
+   
+    cout << "Choose an operation (+, -, *, /): ";
+    cin >> operation;
+
+
+    double result;
+    if (operation == '+')
+    {
+        result = number1 + number2;
+    }
+    else if (operation == '-')
+    {
+        result = number1 - number2;
+    }
+    else if (operation == '*')
+    {
+        result = number1 * number2;
+    }
+    else if (operation == '/')
+    {
+        if (number2 != 0)
+        {
+            result = number1 / number2;
+        }
+        else
+        {
+            cout << "Error occured: Division by zero is not allowed" << endl;
+            return 1;
+        }
+    }
+    else
+    {
+        cout << "Invalid operation. Please choose from (+, -, *, or /.)" << endl;
+        return 1;
+    }
+
+    cout << "Result= " << result << endl;
+
+    return 0;
+}
+
